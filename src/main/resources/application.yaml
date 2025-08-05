@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: legira-app
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    driverClassName: org.postgresql.Driver
+  sql:
+    init:
+      platform: postgres
+
+jwt:
+  secret: ${JWT_SECRET_KEY}
+  accessTokenExpiration:
+    minutes: 30
+  refreshTokenExpiration:
+    days: 30
+
+frontend:
+  base_url:
+    local: ""
